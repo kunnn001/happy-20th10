@@ -124,7 +124,7 @@ body {
 }
 
 .open .letter {
-    /* Thay đổi từ -150px thành -250px (hoặc hơn) */
+    /* TĂNG DỊCH CHUYỂN để không che nút bấm trên mobile */
     transform: translatey(-250px); 
     transition: transform 0.4s 0.6s ease, z-index 0.6s;
     z-index: 2;
@@ -415,7 +415,9 @@ body {
     }
 }
 
-/* ... các style khác ... */
+.reset {
+    text-align: center;
+}
 
 .reset button {
     font-weight: 800;
@@ -426,54 +428,24 @@ body {
     border-radius: 4px;
     color: #FF6863;
     display: inline-block;
-    /* Tăng font-size */
-    font-size: 16px; 
+    /* CHỈNH SỬA CHO MOBILE */
+    font-size: 16px;
     text-transform: uppercase;
-    /* Giảm margin trên và dưới */
-    margin: 10px; 
-    /* Giảm margin-top ban đầu */
-    margin-top: 50px; 
-    /* Tăng padding */
-    padding: 12px; 
-    line-height: 1.5em; /* Có thể điều chỉnh line-height */
+    margin: 10px;
+    margin-top: 50px; /* Giảm margin-top ban đầu */
+    padding: 12px;
+    line-height: 1.5em;
     text-decoration: none;
-    /* Sử dụng width tương đối thay vì min-width cố định */
-    width: 40%; 
-    max-width: 200px; /* Giới hạn kích thước tối đa cho màn hình lớn hơn */
+    width: 40%; /* Sử dụng width tương đối */
+    max-width: 200px; /* Giới hạn kích thước tối đa */
     outline: none;
 }
-
-/* Thêm Media Query để tối ưu hơn cho điện thoại */
-@media (max-width: 600px) {
-    .reset button {
-        /* Đảm bảo nút chiếm 80% chiều rộng trên màn hình rất nhỏ */
-        width: 45%; 
-        margin: 10px 5px; /* Giảm khoảng cách giữa các nút */
-        margin-top: 50px;
-    }
-
-    /* Điều chỉnh lại margin-top tổng thể cho div reset */
-    .reset {
-        margin-top: -60px; /* Dịch chuyển các nút lên trên một chút */
-    }
-
-    /* Điều chỉnh khoảng cách của các nút trong .reset */
-    .reset button {
-        margin: 10px 5px;
-        line-height: 1.2em;
-        padding: 10px;
-        font-size: 14px;
-    }
-}
-
 
 .reset button:hover {
     background-color: #FF6863;
     cursor: pointer;
     color: white;
 }
-
-/* ... các style khác ... */
 
 .valentine {
     text-align: center;
@@ -482,24 +454,21 @@ body {
     font-size: 30px;
 }
 
-/* Thêm Media Query để tối ưu cho điện thoại */
+/* MEDIA QUERY CHO ĐIỆN THOẠI */
 @media (max-width: 600px) {
-    /* Đảm bảo phong bì không chiếm quá nhiều không gian theo chiều dọc */
     #envelope {
         top: 30%; /* Điều chỉnh phong bì lên cao hơn */
     }
 
-    /* Điều chỉnh các nút bấm lên cao hơn */
-    .reset {
-        margin-top: -60px; /* Dịch chuyển các nút lên trên một khoảng */
-    }
-
-    /* Tăng khoảng cách dịch chuyển cho bức thư trên màn hình nhỏ */
     .open .letter {
-        transform: translatey(-200px); /* Điều chỉnh lại nếu -250px quá cao */
+        /* Tăng dịch chuyển cho màn hình nhỏ */
+        transform: translatey(-200px); 
     }
 
-    /* (Tùy chọn) Điều chỉnh kích thước nút để vừa hơn với câu trả lời trước */
+    .reset {
+        margin-top: -60px; /* Dịch chuyển các nút lên trên */
+    }
+
     .reset button {
         width: 45%; 
         margin: 10px 5px; 
