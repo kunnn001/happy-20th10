@@ -3,11 +3,9 @@ $(document).ready(function() {
     var btn_open = $("#open");
     var btn_reset = $("#reset");
 
-    // DÒNG NÀY ĐÃ THIẾT LẬP HIỆU ỨNG KHI CLICK VÀO PHONG BÌ
-    envelope.click(function() { 
+    envelope.click(function() {
         open();
     });
-    
     btn_open.click(function() {
         open();
     });
