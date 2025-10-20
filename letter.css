@@ -415,9 +415,7 @@ body {
     }
 }
 
-.reset {
-    text-align: center;
-}
+/* ... các style khác ... */
 
 .reset button {
     font-weight: 800;
@@ -428,22 +426,54 @@ body {
     border-radius: 4px;
     color: #FF6863;
     display: inline-block;
-    font-size: 14px;
+    /* Tăng font-size */
+    font-size: 16px; 
     text-transform: uppercase;
-    margin: 20px;
-    margin-top: 110px;
-    padding: 10px;
-    line-height: 2em;
+    /* Giảm margin trên và dưới */
+    margin: 10px; 
+    /* Giảm margin-top ban đầu */
+    margin-top: 50px; 
+    /* Tăng padding */
+    padding: 12px; 
+    line-height: 1.5em; /* Có thể điều chỉnh line-height */
     text-decoration: none;
-    min-width: 150px;
+    /* Sử dụng width tương đối thay vì min-width cố định */
+    width: 40%; 
+    max-width: 200px; /* Giới hạn kích thước tối đa cho màn hình lớn hơn */
     outline: none;
 }
+
+/* Thêm Media Query để tối ưu hơn cho điện thoại */
+@media (max-width: 600px) {
+    .reset button {
+        /* Đảm bảo nút chiếm 80% chiều rộng trên màn hình rất nhỏ */
+        width: 45%; 
+        margin: 10px 5px; /* Giảm khoảng cách giữa các nút */
+        margin-top: 50px;
+    }
+
+    /* Điều chỉnh lại margin-top tổng thể cho div reset */
+    .reset {
+        margin-top: -60px; /* Dịch chuyển các nút lên trên một chút */
+    }
+
+    /* Điều chỉnh khoảng cách của các nút trong .reset */
+    .reset button {
+        margin: 10px 5px;
+        line-height: 1.2em;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
 
 .reset button:hover {
     background-color: #FF6863;
     cursor: pointer;
     color: white;
 }
+
+/* ... các style khác ... */
 
 .valentine {
     text-align: center;
