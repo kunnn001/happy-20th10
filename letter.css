@@ -124,8 +124,8 @@ body {
 }
 
 .open .letter {
-    transform: translatey(-150px);
-    /* Tăng dịch chuyển */
+    /* TĂNG DỊCH CHUYỂN để không che nút bấm trên mobile */
+    transform: translatey(-250px); 
     transition: transform 0.4s 0.6s ease, z-index 0.6s;
     z-index: 2;
 }
@@ -428,14 +428,16 @@ body {
     border-radius: 4px;
     color: #FF6863;
     display: inline-block;
-    font-size: 14px;
+    /* CHỈNH SỬA CHO MOBILE */
+    font-size: 16px;
     text-transform: uppercase;
-    margin: 20px;
-    margin-top: 110px;
-    padding: 10px;
-    line-height: 2em;
+    margin: 10px;
+    margin-top: 50px; /* Giảm margin-top ban đầu */
+    padding: 12px;
+    line-height: 1.5em;
     text-decoration: none;
-    min-width: 150px;
+    width: 40%; /* Sử dụng width tương đối */
+    max-width: 200px; /* Giới hạn kích thước tối đa */
     outline: none;
 }
 
@@ -450,4 +452,27 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(20, 20, 20);
     font-size: 30px;
+}
+
+/* MEDIA QUERY CHO ĐIỆN THOẠI */
+@media (max-width: 600px) {
+    #envelope {
+        top: 30%; /* Điều chỉnh phong bì lên cao hơn */
+    }
+
+    .open .letter {
+        /* Tăng dịch chuyển cho màn hình nhỏ */
+        transform: translatey(-200px); 
+    }
+
+    .reset {
+        margin-top: -60px; /* Dịch chuyển các nút lên trên */
+    }
+
+    .reset button {
+        width: 45%; 
+        margin: 10px 5px; 
+        padding: 10px;
+        font-size: 14px;
+    }
 }
