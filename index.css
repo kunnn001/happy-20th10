@@ -1,0 +1,82 @@
+/* Trong file index.css */
+
+
+/* Đặt lại các giá trị mặc định của trình duyệt */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* THAY ĐỔI: Sử dụng min-height để nội dung dài vẫn hiển thị */
+    min-height: 100vh;
+    padding: 20px;
+    /* Thêm padding để nội dung không chạm mép */
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+h1 {
+    color: #ff1493;
+    /* THAY ĐỔI: Sử dụng đơn vị rem/vw cho kích thước chữ */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    /* Giảm margin */
+}
+
+.bunny-image {
+    /* THAY ĐỔI: Giảm kích thước ảnh và dùng đơn vị tương đối (vw hoặc px nhỏ) */
+    width: 180px;
+    max-width: 50vw;
+    /* Giới hạn tối đa là 50% chiều rộng viewport */
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.bunny-text {
+    color: #ff66b2;
+    /* THAY ĐỔI: Điều chỉnh kích thước chữ */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    line-height: 1.4;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
+}
+
+button {
+    /* THAY ĐỔI: Điều chỉnh kích thước nút */
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    /* Thêm khoảng cách nếu cần */
+}
+
+
+/* MEDIA QUERY: Tùy chỉnh cho màn hình điện thoại rất nhỏ */
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 1.5rem;
+        /* Giảm kích thước chữ tiêu đề */
+    }
+    .bunny-image {
+        width: 150px;
+        /* Giảm kích thước ảnh */
+    }
+    .bunny-text {
+        font-size: 1rem;
+        /* Giảm kích thước chữ */
+    }
+}
